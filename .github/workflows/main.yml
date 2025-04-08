@@ -21,7 +21,7 @@ jobs:
         chmod +x .github/scripts/zowe_operations.sh
         .github/scripts/zowe_operations.sh
         
-    - name: Run COBOL Check on Mainframe
+    - name: Run COBOL Check on Mainframe.
       env:
         ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
         ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
