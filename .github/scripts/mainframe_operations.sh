@@ -25,16 +25,13 @@ chmod +x linux_gnucobol_run_tests
 echo "Made linux_gnucobol_run_tests executable"
 cd ..
 # Function to run cobolcheck and copy files
-Copyright Contributors to the Open Mainframe Project's COBOL Programming Course
-[27/44]run_cobolcheck() {
+run_cobolcheck() {
 program=$1
 echo "Running cobolcheck for $program"
 # Run cobolcheck, but don't exit if it fails
 ./cobolcheck -p $program
 echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
-COBOL Programming
-Course #4 3.2.0|
-250217-2356
+
 # Check if CC##99.CBL was created, regardless of cobolcheck exit status
 if [ -f "CC##99.CBL" ]; then
 # Copy to the MVS dataset
@@ -57,8 +54,7 @@ else
 echo "${program}.JCL not found"
 fi
 }
-Copyright Contributors to the Open Mainframe Project's COBOL Programming Course
-[28/44]# Run for each program
+# Run for each program
 for program in NUMBERS EMPPAY DEPTPAY; do
 run_cobolcheck $program
 done
